@@ -19,29 +19,81 @@
         <h3>Choo Choo. Chee Chee</h3>
     </div>
 
-    <div class="scheduleContainer">
-        <div class="row">
-            <div class="col-sm-2">
-               <strong>Train Name</strong> 
-            </div>
-            <div class="col-sm-2">
-               <strong>Destination</strong>
-            </div>
-            <div class="col-sm-2">
-                <strong>Frequency</strong>
-            </div>
-            <div class="col-sm-2">
-                <strong>Next Arrival</strong>
-            </div>
-            <div class="col-sm-2">
-                <strong>Minutes Away</strong>
-            </div>
-        </div>
-        
-    </div>
+    <table class="table">
+        <caption>List of users</caption>
+        <thead>
+            <tr>
+                <th scope="col">Train Name</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Frequency(min)</th>
+                <th scope="col">Next Arrival</th>
+                <th scope="col">Minutes Away</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
 
     <div class="addTrain">
-        <div class="addTrainHeader"><h5>Add Train</h5></div>
+        <div class="addTrainHeader">
+            <h5>Add Train</h5>
+        </div>
         <form>
             <div class="form-group">
                 <label for="formGroupExampleInput"><strong>Train Name </strong></label>
@@ -64,12 +116,16 @@
         </form>
     </div>
 
+
+
     <!--FireBase SDK-->
     <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-database.js"></script>
     <!--jQuery CDN-->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!--Moment JS Cdn-->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <!--User JS-->
     <script src="./assets/javascript/app.js"></script>
 </body>
