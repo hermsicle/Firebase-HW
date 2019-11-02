@@ -24,3 +24,7 @@ body {
 form {
     padding: 10px;
 }
+
+#row {
+    text-decoration: none;
+}

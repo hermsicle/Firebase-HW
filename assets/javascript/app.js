@@ -15,8 +15,13 @@ $(document).ready(function () {
     console.log(database);
     
 
+//create a function that takes the values from the forms and input it to the trains section
 
-
+$('#submit').on('click', function () {
+    let trainName = $('#trainName').val();
+    trainName.append('#newTrain');
+    
+})
 
 
 
