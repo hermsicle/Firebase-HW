@@ -20,8 +20,8 @@ $(document).ready(function () {
         //grabs the user input from the form
         var trainName = $('#trainName').val().trim();
         var destination = $('#destination').val().trim();
-        var firstTrainTime = $('#firstTrainTime').val().trim();
-        var frequencyMin = $('#frequencyMin').val().trim();
+        var firstTrainTime = $('#firstTrainTime').val().trim(); //next arrival
+        var frequencyMin = $('#frequencyMin').val().trim();     //minutes away
 
         //Create a local 'temporary' object for holding train data
         var newTrain = {
@@ -49,6 +49,7 @@ $(document).ready(function () {
         $('#frequencyMin').val("")
     });
 
+
     //Create a firebase event that adds train to the database and create a row in the HTML for new trains
     database.ref().on('child_added', function (childSnapshot) {
         console.log(childSnapshot.val());//This logs all the data that was uploaded earlier
@@ -65,10 +66,18 @@ $(document).ready(function () {
         console.log(firstTrainTime);
         console.log(frequencyMin);
 
-        //Calculate the arrival time of the next train
+        var firstTimeMoment = moment(firstTrainTime, 'HH:mm');
+        console.log('Time Converted: ' + firstTimeMoment);
 
+        var currentTime = moment();
+        console.log(currentTime);
 
-        //Calculate how many minutes till the next train
+        var minuteArrival = currentTime.diff(firstTimeMoment, 'minutes');
+        var minuteLast = minuteArrival % frequencyMin;
+        var awayTrain = frequencyMin - minuteLast;
+
+        var nextArrival = currentTime.add(awayTrain, 'minutes');
+        var arrivalTime = nextArrival.format('HH:mm');
 
 
         //Create a new row in the html
@@ -76,14 +85,13 @@ $(document).ready(function () {
             $('<td>').text(trainName),
             $('<td>').text(destination),
             $('<td>').text(frequencyMin),
-            $('<td>').text(firstTrainTime),
-            // $('<td>').text(trainArrival),
+            $('<td>').text(arrivalTime),
+            $('<td>').text(awayTrain),
         );
 
         //Append thw new row to the table
         $('#train-table > tbody').append(newRow);
     });
-
 
 })
 
