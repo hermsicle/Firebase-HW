@@ -20,8 +20,8 @@ $(document).ready(function () {
         //grabs the user input from the form
         var trainName = $('#trainName').val().trim();
         var destination = $('#destination').val().trim();
-        var firstTrainTime = moment($('#firstTrainTime').val().trim(), 'h:mm:ss a').format('X');
-        var frequencyMin = moment($('#frequencyMin').val().trim(), 'minutes').format('X');
+        var firstTrainTime = $('#firstTrainTime').val().trim();
+        var frequencyMin = $('#frequencyMin').val().trim();
 
         //Create a local 'temporary' object for holding train data
         var newTrain = {
@@ -65,15 +65,18 @@ $(document).ready(function () {
         console.log(firstTrainTime);
         console.log(frequencyMin);
 
-        //Calculate the arrival of the next train
+        //Calculate the arrival time of the next train
+
+
+        //Calculate how many minutes till the next train
 
 
         //Create a new row in the html
         var newRow = $('<tr>').append(
             $('<td>').text(trainName),
             $('<td>').text(destination),
-            $('<td>').text(firstTrainTime),
             $('<td>').text(frequencyMin),
+            $('<td>').text(firstTrainTime),
             // $('<td>').text(trainArrival),
         );
 
@@ -81,5 +84,7 @@ $(document).ready(function () {
         $('#train-table > tbody').append(newRow);
     });
 
-    
+
 })
+
+
