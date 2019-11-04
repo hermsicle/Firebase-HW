@@ -79,7 +79,6 @@ $(document).ready(function () {
         var nextArrival = currentTime.add(awayTrain, 'minutes');
         var arrivalTime = nextArrival.format('HH:mm');
 
-
         //Create a new row in the html
         var newRow = $('<tr>').append(
             $('<td>').text(trainName),
