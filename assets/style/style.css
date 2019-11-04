@@ -6,11 +6,18 @@ body {
     background-color: teal;
     color: white;
     text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+#headerTrain {
+    color: white;
+    background-color: teal;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .addTrain {
     border-style: solid;
-    border-width: 1px;
+    border-width: 0.5px;
+    border-color: silver;
 }
 
 .addTrainHeader {
